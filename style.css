@@ -1,0 +1,462 @@
+:root {
+  --editor-bg: #11111b;
+  --sidebar-bg: #181825;
+  --workspace-bg: #1e1e2e;
+  --accent: #89b4fa;
+  --text-main: #cdd6f4;
+  --paper-white: #ffffff;
+  --success: #a6e3a1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--workspace-bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+  background: var(--editor-bg);
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #313244;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  opacity: 0.7;
+}
+
+.nav-links li:hover,
+.nav-links li.active {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* --- PAGE CONTROL --- */
+.page-section {
+  display: none;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.page-section.active {
+  display: block;
+}
+
+#builder-page.active {
+  display: flex; /* Special layout for the editor */
+  height: calc(100vh - 60px);
+}
+
+/* (UNCHANGED BASE STYLES — your original CSS is intact) */
+.content-card p {
+  line-height: 1.6;
+}
+.resume-section {
+  margin-bottom: 50px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- HOME & CONTENT PAGES --- */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+.content-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.content-card {
+  background: var(--sidebar-bg);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+/* --- BUILDER SIDEBAR --- */
+.editor-sidebar {
+  width: 600px;
+  background: var(--sidebar-bg);
+  padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+  overflow-y: auto;
+  border-right: 1px solid #313244;
+}
+
+h4 {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  background: var(--editor-bg);
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  padding: 12px;
+  color: white;
+  margin-bottom: 15px;
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+}
+
+/* --- ATS SCANNER --- */
+.ats-scanner {
+  background: var(--editor-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1.2rem 0 1.8rem 0;
+  border: 1px solid #313244;
+}
+
+.ats-scanner textarea {
+  height: 110px;
+  margin-bottom: 10px;
+}
+
+.ats-scanner .btn-primary {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#ats-results {
+  background: var(--sidebar-bg);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.ats-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+#ats-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* --- PREVIEW AREA (BLUEPRINT) --- */
+.preview-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  overflow-y: auto;
+  background-color: var(--workspace-bg);
+  background-image: radial-gradient(#313244 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.paper {
+  width: 8.5in;
+  height: 11in; /* Fixed height for standard paper */
+  background: var(--paper-white);
+  padding: 0.5in 0.7in; /* Standard professional margins */
+  margin: 0 auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  color: #1a1a1a;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents content from spilling to a 2nd page */
+  position: relative;
+}
+
+/* --- RESUME TEXT --- */
+.resume-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.resume-header h1 {
+  margin: 0;
+  font-size: 24pt;
+}
+.resume-section h4 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
+  color: #111;
+  border-bottom: 1.5px solid #111;
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+.whitespace-pre {
+  white-space: pre-wrap;
+  font-size: 10pt;
+  line-height: 1.6;
+}
+
+/* --- UTILS --- */
+.hidden {
+  display: none;
+}
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--editor-bg);
+}
+.btn-download {
+  width: 100%;
+  padding: 15px;
+  background: var(--success);
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #111;
+}
+.btn-tiny {
+  background: #45475a;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+@media print {
+  .navbar,
+  .editor-sidebar {
+    display: none !important;
+  }
+  .preview-area {
+    padding: 0;
+    background: none;
+  }
+  .paper {
+    box-shadow: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  #builder-page.active {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .editor-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #313244;
+  }
+
+  .preview-area {
+    padding: 1rem;
+    overflow: visible;
+  }
+
+  .paper {
+    width: 100%;
+    min-height: auto;
+    font-size: 0.8rem;
+  }
+}
+
+#out-edu,
+#out-skills {
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+#out-exp,
+#out-proj {
+  margin-bottom: 10px;
+}
+
+@media print {
+  /* Set the physical page size to letter */
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
+  /* Hide everything except the resume paper */
+  body * {
+    visibility: hidden;
+  }
+
+  .preview-area,
+  .preview-area *,
+  #resume-paper,
+  #resume-paper * {
+    visibility: visible;
+  }
+
+  /* Position the paper perfectly at the top-left of the PDF */
+  .preview-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 8.5in;
+    height: 11in;
+    background: none;
+  }
+
+  #resume-paper {
+    box-shadow: none;
+    margin: 0;
+    border: none;
+    left: 0;
+    top: 0;
+  }
+}
+
+/* Add to style.css */
+#ats-results.active {
+  display: block;
+  border: 1px solid var(--accent);
+  animation: fadeIn 0.3s ease;
+}
+
+.keyword-match {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.keyword-miss {
+  color: #f38ba8;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.footer {
+  background: var(--editor-bg);
+  border-top: 1px solid #313244;
+  padding: 20px 32px;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-brand {
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.4px;
+}
+
+.footer-meta {
+  opacity: 0.6;
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* --- Compact / Mobile --- */
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 14px;
+  }
+}
+
+/* --- Print Safety --- */
+@media print {
+  .footer {
+    display: none !important;
+  }
+}
+
+.page {
+  flex: 1;
+  display: flex;
+}
+
+.page-section.active {
+  display: block;
+  min-height: 100%;
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Your Career</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="logo"><strong>CareerLaunch</strong></div>
+      <ul class="nav-links">
+        <li onclick="navigateTo('home-page')" id="nav-home" class="active">
+          Home
+        </li>
+        <li onclick="navigateTo('guide-page')" id="nav-guide">Resume Guide</li>
+        <li onclick="navigateTo('cover-letter-page')" id="nav-cover">
+          Cover Letters
+        </li>
+        <li onclick="navigateTo('interview-page')" id="nav-interview">
+          Interview Tips
+        </li>
+        <li onclick="navigateTo('builder-page')" id="nav-builder">
+          Resume Builder
+        </li>
+      </ul>
+    </nav>
+
+    <!-- HOME -->
+    <div id="home-page" class="page-section active">
+      <div class="hero">
+        <h1>Launch Your Career Forward</h1>
+        <p>
+          A specialized toolkit for students to bridge the gap between academia
+          and industry.
+        </p>
+        <button class="btn-primary" onclick="navigateTo('builder-page')">
+          Start Building Now
+        </button>
+      </div>
+    </div>
+
+    <!-- RESUME GUIDE -->
+    <div id="guide-page" class="page-section">
+      <div class="content-wrapper">
+        <h2>Resume Guide</h2>
+
+        <div class="content-card">
+          <h3>Personal Details</h3>
+          <p>
+            At the top of your resume, clearly put your full name alongside
+            contact information. Always include an email and phone number.
+            Depending on your field, add a <strong>LinkedIn</strong>,
+            <strong>GitHub</strong>, or <strong>portfolio</strong>.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Education</h3>
+          <p>
+            As a student or recent graduate, your education is your primary
+            qualification. Include GPA, relevant coursework (e.g.
+            <i>Data Structures</i>, <i>Thermodynamics</i>), and graduation date.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Experience and Projects</h3>
+          <p>
+            <strong>Experience:</strong> Focus on transferable skills and
+            measurable impact. Avoid listing responsibilities — show outcomes.
+          </p>
+          <p>
+            <strong>Projects:</strong> Highlight the <b>skills</b>,
+            <b>purpose</b>, and <b>results</b> of academic or personal work.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Quantify Your Impact</h3>
+          <p>
+            Use numbers whenever possible. A strong formula is:
+            <strong>“Accomplished X as measured by Y, by doing Z.”</strong>
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Formatting and Other Key Elements</h3>
+          <p>
+            Keep your resume to <strong>one page</strong>, use consistent fonts,
+            clean spacing, and bullet points. Avoid paragraphs.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>ATS Optimization</h3>
+          <p>
+            Applicant Tracking Systems scan resumes for keywords. Use standard
+            headings, avoid graphics, and mirror language from the job posting.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Common Resume Red Flags</h3>
+          <p>
+            Avoid words without evidence (don't just list skills without showing
+            where you learned them), excessive coursework, and over-designed
+            resumes with icons or graphics.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COVER LETTERS -->
+    <div id="cover-letter-page" class="page-section">
+      <div class="content-wrapper">
+        <h2>Cover Letters</h2>
+
+        <div class="content-card">
+          <h3>Purpose</h3>
+          <p>
+            A cover letter explains <i>why</i> you want the role and
+            <strong>why you’re a strong fit</strong>. Research the company’s
+            mission, products, and future goals.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Recommended Structure</h3>
+          <p>
+            Paragraph 1: Why this role and company.<br />
+            Paragraph 2: Discuss experiences and projects from your resume.<br />
+            Paragraph 3: Confident closing.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Formatting</h3>
+          <p>
+            Keep your cover letter consistent with your resume in font, spacing,
+            and structure.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Build a Narrative</h3>
+          <p>
+            Choose one or a few experiences/projects from your resume. Describe
+            a challenge you faced in each, your actions to solve that problem,
+            and the outcome. You should especially focus on how you solved the
+            issue, and the skills you learned/used.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Common Mistakes</h3>
+          <p>
+            Avoid repeating your resume, being vague, using a casual tone, or
+            claiming skills without explaining how you developed them.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Call to Action</h3>
+          <p>End confidently and express interest in further discussion.</p>
+        </div>
+
+        <div class="content-card">
+          <h3>When You Should (and Shouldn’t) Write One</h3>
+          <p>
+            If optional, only submit a cover letter if you can tailor it to the
+            role well. Generic letters may not be helpful.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERVIEW -->
+    <div id="interview-page" class="page-section">
+      <div class="content-wrapper">
+        <h2>Interview Tips</h2>
+
+        <div class="content-card">
+          <h3>Before Your Interview</h3>
+          <p>
+            Research the company, role, team, and recent developments. Prepare
+            questions regarding these things that you can ask during the
+            interview. Wear formal clothes (whether your interview is in-person
+            or online).
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>The STAR Method</h3>
+          <p>
+            Use this method when answering questions related to problem-solving
+            or your past experiences. <strong>S</strong>ituation,
+            <strong>T</strong>ask, <strong>A</strong>ction,
+            <strong>R</strong>esult. Focus on
+            <strong>your</strong>
+            contributions.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Ask Your Own Questions</h3>
+          <p>
+            Use the questions you made before the interview (and any others that
+            may have come up during the interview) to ask once your interview is
+            complete.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>After the Interview</h3>
+          <p>
+            Send a thank-you email within 24 hours referencing the conversation.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>Virtual Interview Setup</h3>
+          <p>
+            Test your setup, ensure good lighting, and choose a clean,
+            distraction-free background.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUILDER -->
+    <div id="builder-page" class="page-section app-container">
+      <aside class="editor-sidebar">
+        <header>
+          <section class="ats-scanner">
+            <h4>ATS Keyword Scanner</h4>
+
+            <textarea
+              id="job-description"
+              placeholder="Paste job description here..."
+            ></textarea>
+
+            <button class="btn-primary" onclick="scanATS()">Scan Resume</button>
+
+            <div id="ats-results" class="hidden">
+              <div class="ats-score-row">
+                <span>Match Score</span>
+                <strong id="ats-score">0%</strong>
+              </div>
+              <p id="ats-feedback"></p>
+            </div>
+          </section>
+
+          <h3>Resume Editor</h3>
+          <p>Fill in your details below.</p>
+          <p><em>Tip: Recruiters skim resumes in ~6 seconds.</em></p>
+        </header>
+
+        <div class="editor-actions">
+          <button class="btn-tiny" onclick="loadSample()">Load Sample</button>
+          <button
+            class="btn-tiny"
+            onclick="clearData()"
+            style="background: #f38ba8"
+          >
+            Clear All
+          </button>
+        </div>
+
+        <div class="form-sections">
+          <section>
+            <h4>Contact Information</h4>
+            <input
+              id="in-name"
+              placeholder="Full Name"
+              oninput="updatePreview()"
+            />
+            <input
+              id="in-title"
+              placeholder="Target Role"
+              oninput="updatePreview()"
+            />
+            <input
+              id="in-links"
+              placeholder="GitHub | LinkedIn | Portfolio"
+              oninput="updatePreview()"
+            />
+          </section>
+
+          <section>
+            <h4>Education</h4>
+            <textarea id="in-edu" oninput="updatePreview()"></textarea>
+          </section>
+
+          <section>
+            <h4>Experience</h4>
+            <textarea
+              id="in-exp"
+              onkeydown="autoBullet(event)"
+              oninput="updatePreview()"
+            ></textarea>
+          </section>
+
+          <section>
+            <h4>Projects</h4>
+            <textarea
+              id="in-proj"
+              onkeydown="autoBullet(event)"
+              oninput="updatePreview()"
+            ></textarea>
+          </section>
+
+          <section>
+            <h4>Technical Skills</h4>
+            <textarea id="in-skills" oninput="updatePreview()"></textarea>
+          </section>
+        </div>
+
+        <button class="btn-download" onclick="window.print()">
+          Export to PDF
+        </button>
+      </aside>
+
+      <main class="preview-area">
+        <div id="resume-paper" class="paper">
+          <header class="resume-header">
+            <h1 id="out-name">YOUR NAME</h1>
+            <p id="out-title">STEM Professional</p>
+            <div id="out-links">GitHub | LinkedIn | Portfolio</div>
+          </header>
+
+          <div class="resume-section">
+            <h4>EDUCATION</h4>
+            <div id="out-edu" class="whitespace-pre"></div>
+          </div>
+
+          <div class="resume-section">
+            <h4>EXPERIENCE</h4>
+            <div id="out-exp" class="whitespace-pre"></div>
+          </div>
+
+          <div class="resume-section">
+            <h4>PROJECTS</h4>
+            <div id="out-proj" class="whitespace-pre"></div>
+          </div>
+
+          <div class="resume-section">
+            <h4>TECHNICAL SKILLS</h4>
+            <div id="out-skills" class="whitespace-pre"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">CareerLaunch</div>
+          <div class="footer-meta">Built for clarity • Optimized for ATS</div>
+        </div>
+
+        <div class="footer-links">Contact: neelvinayak9@gmail.com</div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
