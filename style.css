@@ -29,7 +29,6 @@ body {
   min-height: 100vh;
 }
 
-/* --- NAVIGATION --- */
 .navbar {
   background: var(--editor-bg);
   padding: 0.8rem 2rem;
@@ -63,7 +62,6 @@ body {
   opacity: 1;
 }
 
-/* --- PAGE CONTROL --- */
 .page-section {
   display: none;
   animation: fadeIn 0.4s ease-out;
@@ -74,11 +72,10 @@ body {
 }
 
 #builder-page.active {
-  display: flex; /* Special layout for the editor */
+  display: flex;
   height: calc(100vh - 60px);
 }
 
-/* (UNCHANGED BASE STYLES — your original CSS is intact) */
 .content-card p {
   line-height: 1.6;
 }
@@ -97,10 +94,15 @@ body {
   }
 }
 
-/* --- HOME & CONTENT PAGES --- */
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 100px 20px;
+
+  min-height: calc(100vh - 60px);
+  padding: 0 20px;
 }
 .hero h1 {
   font-size: 3.5rem;
@@ -120,7 +122,6 @@ body {
   border-left: 4px solid var(--accent);
 }
 
-/* --- BUILDER SIDEBAR --- */
 .editor-sidebar {
   width: 600px;
   background: var(--sidebar-bg);
@@ -149,7 +150,6 @@ textarea {
   display: block;
 }
 
-/* --- ATS SCANNER --- */
 .ats-scanner {
   background: var(--editor-bg);
   padding: 1rem;
@@ -187,7 +187,6 @@ textarea {
   font-weight: 700;
 }
 
-/* --- PREVIEW AREA (BLUEPRINT) --- */
 .preview-area {
   flex: 1;
   display: flex;
@@ -201,18 +200,17 @@ textarea {
 
 .paper {
   width: 8.5in;
-  height: 11in; /* Fixed height for standard paper */
+  height: 11in;
   background: var(--paper-white);
-  padding: 0.5in 0.7in; /* Standard professional margins */
+  padding: 0.5in 0.7in;
   margin: 0 auto;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   color: #1a1a1a;
   box-sizing: border-box;
-  overflow: hidden; /* Prevents content from spilling to a 2nd page */
+  overflow: hidden;
   position: relative;
 }
 
-/* --- RESUME TEXT --- */
 .resume-header {
   text-align: center;
   margin-bottom: 40px;
@@ -235,7 +233,6 @@ textarea {
   line-height: 1.6;
 }
 
-/* --- UTILS --- */
 .hidden {
   display: none;
 }
@@ -319,13 +316,11 @@ textarea {
 }
 
 @media print {
-  /* Set the physical page size to letter */
   @page {
     size: letter;
     margin: 0;
   }
 
-  /* Hide everything except the resume paper */
   body * {
     visibility: hidden;
   }
@@ -337,7 +332,6 @@ textarea {
     visibility: visible;
   }
 
-  /* Position the paper perfectly at the top-left of the PDF */
   .preview-area {
     position: absolute;
     left: 0;
@@ -358,7 +352,6 @@ textarea {
   }
 }
 
-/* Add to style.css */
 #ats-results.active {
   display: block;
   border: 1px solid var(--accent);
@@ -429,7 +422,6 @@ textarea {
   color: var(--accent);
 }
 
-/* --- Compact / Mobile --- */
 @media (max-width: 768px) {
   .footer {
     padding: 16px 20px;
@@ -475,7 +467,6 @@ textarea {
 
 .page {
   flex: 1;
-  display: flex;
 }
 
 .page-section.active {
