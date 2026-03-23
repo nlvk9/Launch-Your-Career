@@ -1,4 +1,3 @@
-// 1. DATA CONFIGURATION
 const fields = ["name", "title", "links", "edu", "exp", "proj", "skills"];
 const defaults = {
   name: "YOUR NAME",
@@ -6,7 +5,6 @@ const defaults = {
   links: "GitHub | LinkedIn | Portfolio",
 };
 
-// 2. CORE LOGIC
 function updatePreview() {
   fields.forEach((f) => {
     const val = document.getElementById(`in-${f}`).value;
@@ -30,9 +28,7 @@ function autoBullet(e) {
   }
 }
 
-// 3. NAVIGATION & DATA MGMT
 function navigateTo(id) {
-  // Save the current page to localStorage
   localStorage.setItem("activePage", id);
 
   document
@@ -41,7 +37,6 @@ function navigateTo(id) {
 
   document.getElementById(id).classList.add("active");
 
-  // Select the specific nav li that has the onclick for this id
   const navItem = document.querySelector(`[onclick*="${id}"]`);
   if (navItem) navItem.classList.add("active");
 }
@@ -90,7 +85,6 @@ function scanATS() {
     .getElementById("job-description")
     .value.toLowerCase();
 
-  // Combine all resume fields into one searchable string
   const resumeText = fields
     .map((f) => document.getElementById(`in-${f}`).value || "")
     .join(" ")
@@ -106,7 +100,6 @@ function scanATS() {
     return;
   }
 
-  // 1. Identify potential keywords
   const commonWords = new Set([
     "this",
     "that",
@@ -123,7 +116,7 @@ function scanATS() {
   const jobWords = jobText.match(/\b(\w+)\b/g) || [];
 
   const keywords = [...new Set(jobWords)].filter(
-    (word) => word.length > 3 && !commonWords.has(word)
+    (word) => word.length > 3 && !commonWords.has(word),
   );
 
   let matches = 0;
